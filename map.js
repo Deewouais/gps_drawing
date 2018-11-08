@@ -51,15 +51,15 @@ geolocate.on('geolocate', function(event) {
 })
 
 // map.on('click', function(event) {
-//  current_location = [event.lngLat.lng, event.lngLat.lat]
+// current_location = [event.lngLat.lng, event.lngLat.lat]
 //   console.log('clicked', current_location)        
 //
 //    if (active) {                
 //       path.push(current_location)
-//        console.log(path)           
-//        map.getSource('drawing').setData(geojson)   // update the layer because the path has changed        
-//  }
-//
+//      console.log(path)           
+//       map.getSource('drawing').setData(geojson)   // update the layer because the path has changed        
+// }
+
 //})
 
 // for testing purposes, also update the variable whenever you click on the map
@@ -81,6 +81,8 @@ draw_btn.addEventListener('click', function() {
 
 let active = false
 let start_marker = new mapboxgl.Marker()    
+let path = []               // this array will hold the sequence of points in our path
+
 
 function startDrawing() {
     active = true                              
